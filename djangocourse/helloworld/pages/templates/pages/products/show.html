@@ -39,6 +39,12 @@
 
 {% endif %}
 
+{% for comment in product.comment_set.all %}
+
+- {{ comment.description }}<br />
+
+{% endfor %}
+
 </div>
 
 </div>
