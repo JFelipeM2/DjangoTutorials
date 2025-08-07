@@ -10,7 +10,7 @@ crossorigin="anonymous" />
 <title>{% block title %}'Online Store'{% endblock %}</title>
 </head>
 <body>
- <!-- header -->
+<!-- header -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
 <div class="container">
@@ -33,6 +33,12 @@ aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navi
 <header class="masthead bg-primary text-white text-center py-4">
 <div class="container d-flex align-items-center flex-column">
 <h2>{% block header_title %}'A Django EAFIT App'{% endblock %}</h2>
+<!-- Easter egg button (hidden) -->
+<div style="position: absolute; top: 10px; right: 10px; opacity: 0.1; transition: opacity 0.3s;">
+<a href="{% url 'eegg' %}" style="color: white; text-decoration: none; font-size: 12px;" 
+onmouseover="this.parentElement.style.opacity='1'" 
+onmouseout="this.parentElement.style.opacity='0.1'">🎵</a>
+</div>
 </div>
 </header>
 <!-- header -->

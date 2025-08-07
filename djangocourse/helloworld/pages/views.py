@@ -108,7 +108,7 @@ class ProductCreateView(View):
         return render(request, self.template_name, viewData)
 
     def post(self, request):
-        print("=== POST METHOD CALLED ===")
+
         print("Request data:", request.POST)
         form = ProductForm(request.POST)
         print("Form is valid:", form.is_valid())
@@ -122,5 +122,10 @@ class ProductCreateView(View):
             viewData["title"] = "Create product"
             viewData["form"] = form
             return render(request, self.template_name, viewData)
-        
+
+class EasterEggView(View):
+    template_name = 'pages/eegg/atn.html'
+    
+    def get(self, request):
+        return render(request, self.template_name)
     

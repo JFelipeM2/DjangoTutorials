@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FERXXO</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        button {
+            background: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="playBtn" onclick="startShow()">Dale mor</button>
+    
+    <audio id="audio" loop>
+        <source src="/static/pages/eegg/PhineasYFerb.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function startShow() {
+            const button = document.getElementById('playBtn');
+            const audio = document.getElementById('audio');
+            
+            // Ocultar botón
+            button.classList.add('hidden');
+            
+            // Cambiar fondo a imagen
+            document.body.style.backgroundImage = "url('https://i.imgur.com/TfR7V0U.jpeg')";
+            document.body.style.backgroundSize = "contain";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundRepeat = "no-repeat";
+            
+            // Reproducir música
+            audio.volume = 1.0;
+            audio.play().catch(error => {
+                console.log('Error de audio:', error);
+                alert('Error: ' + error.message);
+            });
+        }
+    </script>
+</body>
+</html>
